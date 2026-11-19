@@ -1,0 +1,17 @@
+class Solution {
+    public String largestGoodInteger(String num) {
+        int n = num.length();
+        String good = "";
+
+        for(int i=0;i<=n-3;i++){
+            if(num.charAt(i) == num.charAt(i+1) && num.charAt(i+1) == num.charAt(i+2)){
+                String current = num.substring(i,i+3);
+
+                if(current.compareTo(good) > 0){
+                    good = current;
+                }
+            }
+        }
+        return good;
+    }
+}
